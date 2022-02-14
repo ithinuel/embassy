@@ -569,7 +569,7 @@ where
     /// ```
     pub fn new() -> Self {
         Self {
-            inner: M::Mutex::new(RefCell::new(ChannelState::new())),
+            inner: M::Mutex::<RefCell<ChannelState<T, N>>>::new(RefCell::new(ChannelState::new())),
         }
     }
 
